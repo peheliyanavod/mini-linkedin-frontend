@@ -1,30 +1,16 @@
 <div style="padding: 20px; font-family: sans-serif;">
-  <h1>Mini-LinkedIn Skill Hub</h1>
   
-  <!-- THE NEW TEXT BOX AND BUTTON -->
-  <div style="margin-bottom: 20px;">
-    <!-- We name this input #newSkillInput so Angular can easily read it -->
-    <input #newSkillInput type="text" placeholder="Type a new skill ">
+  <!-- OUR NEW NAVIGATION BAR -->
+  <nav style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+    <h2 style="display: inline-block; margin-right: 20px;">Mini-LinkedIn</h2>
     
-    <!-- When clicked, we send the text to our Brain, and then clear the text box! -->
-    <button (click)="addNewSkill(newSkillInput.value); newSkillInput.value = ''">
-      Add Skill
-    </button>
-  </div>
+    <!-- Notice we use routerLink instead of href! -->
+    <a routerLink="/" style="margin-right: 15px; text-decoration: none; color: blue;">Directory</a>
+    <a routerLink="/profile" style="text-decoration: none; color: blue;">My Profile</a>
+  </nav>
 
-  <h3>Available Skills in the Company:</h3>
-  <ul>
-    @for (skill of skillsList; track skill.id) {
-      <li style="margin-bottom: 10px;">
-        <!-- Show the name -->
-        <strong>{{ skill.skill_name }}</strong> 
-        
-        <!-- The new Edit and Delete buttons! -->
-        <button (click)="editSkill(skill)" style="margin-left: 10px;">Edit</button>
-        <button (click)="deleteSkill(skill.id)" style="margin-left: 5px; color: red;">Delete</button>
-      </li>
-    } @empty {
-      <li>No skills found. Waiting for data...</li>
-    }
-  </ul>
+  <!-- THE MAGIC DOORWAY -->
+  <!-- This tag is exactly where Angular will swap the Home and Profile components in and out! -->
+  <router-outlet></router-outlet>
+
 </div>

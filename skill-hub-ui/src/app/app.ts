@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillService, Skill } from './services/skill.service';
+// Add this new import!
+import { RouterOutlet, RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  // Plug them in here!
+  imports: [CommonModule, RouterOutlet, RouterLink], 
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
