@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<div style="margin-top: 20px;">
+  <!-- Your Profile Header -->
+  <div style="background-color: #f3f2ef; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="margin: 0;">Navod</h2>
+    <p style="margin: 5px 0 0 0; color: #666;">Associate Software Engineer</p>
+  </div>
+
+  <h3>My Endorsed Skills:</h3>
+  
+  <ul>
+    @for (skill of mySkills; track skill.id) {
+      <li style="margin-bottom: 10px;">
+        <strong>{{ skill.skill_name }}</strong> 
+      </li>
+    } @empty {
+      <li>You haven't been endorsed for any skills yet!</li>
+    }
+  </ul>
+</div>
