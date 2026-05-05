@@ -2,8 +2,8 @@
   <h3>Available Skills in the Company:</h3>
   
   <div style="margin-bottom: 20px;">
-    <input #newSkillInput type="text" placeholder="Type a new skill (e.g., Docker)">
-    <button (click)="addNewSkill(newSkillInput.value); newSkillInput.value = ''">Add Skill</button>
+    <input #newSkillInput type="text" placeholder="Type a new skill">
+    <button class="btn btn-primary" (click)="addNewSkill(newSkillInput.value); newSkillInput.value = ''">Add Skill</button>
   </div>
 
   <ul>
