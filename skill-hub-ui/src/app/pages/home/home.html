@@ -1,1 +1,20 @@
-<p>home works!</p>
+<div style="margin-top: 20px;">
+  <h3>Available Skills in the Company:</h3>
+  
+  <div style="margin-bottom: 20px;">
+    <input #newSkillInput type="text" placeholder="Type a new skill (e.g., Docker)">
+    <button (click)="addNewSkill(newSkillInput.value); newSkillInput.value = ''">Add Skill</button>
+  </div>
+
+  <ul>
+    @for (skill of skillsList; track skill.id) {
+      <li style="margin-bottom: 10px;">
+        <strong>{{ skill.skill_name }}</strong> 
+        <button (click)="editSkill(skill)" style="margin-left: 10px;">Edit</button>
+        <button (click)="deleteSkill(skill.id)" style="margin-left: 5px; color: red;">Delete</button>
+      </li>
+    } @empty {
+      <li>No skills found. Waiting for data...</li>
+    }
+  </ul>
+</div>
