@@ -27,4 +27,15 @@ export class SkillService {
   addSkill(skill: Skill): Observable<Skill> {
     return this.http.post<Skill>(this.apiUrl, skill);
   }
+
+  // DELETE: Remove a skill from Go
+  deleteSkill(id: number): Observable<any> {
+    // We are using the modern template literal syntax here!
+    return this.http.delete(`${this.apiUrl}?id=${id}`);
+  }
+
+  // PUT: Update an existing skill in Go
+  updateSkill(id: number, skill: Skill): Observable<any> {
+    return this.http.put(`${this.apiUrl}?id=${id}`, skill);
+  }
 }

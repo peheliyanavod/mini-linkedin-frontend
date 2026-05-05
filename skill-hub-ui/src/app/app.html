@@ -15,7 +15,14 @@
   <h3>Available Skills in the Company:</h3>
   <ul>
     @for (skill of skillsList; track skill.id) {
-      <li>{{ skill.skill_name }}</li>
+      <li style="margin-bottom: 10px;">
+        <!-- Show the name -->
+        <strong>{{ skill.skill_name }}</strong> 
+        
+        <!-- The new Edit and Delete buttons! -->
+        <button (click)="editSkill(skill)" style="margin-left: 10px;">Edit</button>
+        <button (click)="deleteSkill(skill.id)" style="margin-left: 5px; color: red;">Delete</button>
+      </li>
     } @empty {
       <li>No skills found. Waiting for data...</li>
     }
